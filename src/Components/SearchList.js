@@ -1,40 +1,29 @@
 import React from 'react';
+import {useDispatch, useSelector} from "react-redux";
+
 import './style.scss';
 import Tournament from "./Tournament";
+import {addTournamentAction} from "../Redux/actions";
 
 const SearchList = () => {
 
-    const MockData = [
-        {
-            id: 1,
-            img: 'https://cdn-images.win.gg/external/1/tournament/MzU3Nw/99eb4e312e973fa08263d2fb10541ada/banner/original.jpg',
-            title: 'title1',
-            description: 'description2'
-        },
-        {
-            id: 2,
-            img: 'https://cdn-images.win.gg/external/1/tournament/MzU3Nw/99eb4e312e973fa08263d2fb10541ada/banner/original.jpg',
-            title: 'title2',
-            description: 'description2'
-        },
-        {
-            id: 3,
-            img: 'https://cdn-images.win.gg/external/1/tournament/MzU3Nw/99eb4e312e973fa08263d2fb10541ada/banner/original.jpg',
-            title: 'title3',
-            description: 'description3'
-        },
-        {
-            id: 4,
-            img: 'https://cdn-images.win.gg/external/1/tournament/MzU3Nw/99eb4e312e973fa08263d2fb10541ada/banner/original.jpg',
-            title: 'title4',
-            description: 'description4'
-        }
-    ];
+    const dispatchTournament = useDispatch();
+
+    const searchedTournaments = useSelector(state => state.searchedTournaments);
+    const showResults = useSelector(state => state.showResults);
+    console.log(searchedTournaments);
 
     return (
         <div className='SearchList_wrap'>
-            {MockData.map((item) => (
-                <Tournament key={item.id} item={item}/>
+
+            {showResults && searchedTournaments.map((item) => (
+                <Tournament
+                    key={item.id}
+                    item={item}
+                    onClick={() => {
+                        dispatchTournament(addTournamentAction(item));
+                    }}
+                />
             ))}
         </div>
     )

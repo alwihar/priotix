@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
 .App_wrap {
   width: 100%;
   height: 100%;
-  padding: 25px;
+  padding: 1%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -11,13 +13,28 @@
 
   .Search {
     width: 37%;
-    height: max-content;
+    height: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px;
     background-color: white;
     border-radius: 20px;
+    box-shadow: 8px 8px 18px -3px rgba(161,132,161,1);
+
+    .Search_title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+
+      span {
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        color: #24006f;
+      }
+    }
 
     .SearchBar_wrap {
       display: flex;
@@ -42,7 +59,7 @@
     }
 
     .SearchList_wrap {
-      max-height: 40vh;
+      max-height: 100%;
       flex: 1;
       overflow-y: auto;
       overflow-x: hidden;
@@ -65,19 +82,51 @@
   }
 
   .SaveList_wrap {
-    height: 30vh;
+    height: 30%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px;
-    background-color: white;
-    border-radius: 20px;
 
-    .Tournament_item {
-      max-width: 400px;
-      border: none;
+    .SaveList_title {
+      width: 100%;
+      display: flex;
+      margin-bottom: 10px;
+
+      span {
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        color: #24006f;
+      }
+    }
+
+    .SaveList {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 8px 8px 18px -3px rgba(161,132,161,1);
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px #92abfe;
+      }
+
+      .Tournament_item {
+        max-width: 400px;
+        padding: 10px;
+        border: none;
+      }
     }
   }
 
@@ -91,28 +140,6 @@
       background-color: rgb(232, 240, 254);
     }
 
-    .Tournament_img {
-      img {
-        height: 50px;
-        max-width: 50px;
-      }
-    }
 
-    .Tournament_text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex: 1;
-      padding: 0 20px;
-
-      .title {
-        font-size: 18px;
-        font-weight: 600;
-      }
-
-      .description {
-
-      }
-    }
   }
 }

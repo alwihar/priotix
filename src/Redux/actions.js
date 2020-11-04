@@ -6,6 +6,11 @@ export function searchedTournamentsAction (tournaments) {
     return {
         type: SEARCHED_TOURNAMENTS,
         payload: tournaments,
+        meta: {
+            debounce: {
+                time: 300,
+            }
+        }
     }
 }
 

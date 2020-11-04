@@ -8,6 +8,9 @@ const App = () => {
   return (
     <div className='App_wrap'>
       <div className="Search">
+          <div className="Search_title">
+              <span>Search Tournaments Here!</span>
+          </div>
           <SearchBar/>
           <SearchList/>
       </div>

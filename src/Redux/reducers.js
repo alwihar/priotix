@@ -1,7 +1,7 @@
 const initialState = {
     searchedTournaments: [],
     showResults : false,
-    savedTournaments: []
+    savedTournaments: [],
 };
 
 function Reducer(state = initialState, action) {
@@ -27,9 +27,9 @@ function Reducer(state = initialState, action) {
             return {
                 ...state,
                 savedTournaments: savedTournaments,
-            }
-        default:
-            return state;
+            };
+            default:
+                return state;
     }
 }
 

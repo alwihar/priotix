@@ -17,19 +17,24 @@ const SaveList = () => {
 
     return (
         <div className='SaveList_wrap'>
-            {savedTournaments.map((item) => (
-                <Tournament key={item.id} item={item}>
-                    <IconButton
-                        edge="end"
-                        aria-label="delete"
-                        onClick={() => {
-                            deleteTournament(deleteTournamentAction(item.id))
-                        }}
-                    >
-                        <CloseIcon/>
-                    </IconButton>
-                </Tournament>
-            ))}
+            <div className="SaveList_title">
+                <span>Your Saved Items</span>
+            </div>
+            <div className="SaveList">
+                {savedTournaments.map((item) => (
+                    <Tournament key={item.id} item={item}>
+                        <IconButton
+                            edge="end"
+                            aria-label="delete"
+                            onClick={() => {
+                                deleteTournament(deleteTournamentAction(item.id))
+                            }}
+                        >
+                            <CloseIcon/>
+                        </IconButton>
+                    </Tournament>
+                ))}
+            </div>
         </div>
     )
 };

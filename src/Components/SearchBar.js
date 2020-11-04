@@ -18,13 +18,9 @@ const SearchBar = () => {
 
     const onInputChange = (ev) => {
         setValue(ev.target.value);
-    };
-
-    const onFormSubmit = (ev) => {
-        ev.preventDefault();
         axios.get(`${MAIN_URL}/search`, {
             params: {
-                q: value.trim().toLowerCase(),
+                q: value,
                 index: 'tournament'
             }
         })
@@ -52,8 +48,12 @@ const SearchBar = () => {
                 console.log(error);
             })
             .then(function () {
-                // always executed
+
             });
+    };
+
+    const onFormSubmit = (ev) => {
+        ev.preventDefault();
     };
 
     return (

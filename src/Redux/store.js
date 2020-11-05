@@ -1,5 +1,4 @@
-import { createStore, applyMiddleware } from "redux";
-import createDebounce from 'redux-debounced';
+import { createStore } from "redux";
 import Reducer from "./reducers.js";
 
 function saveToLocalStorage(state) {
@@ -22,12 +21,12 @@ function loadFromLocalStorage() {
     }
 }
 
-const createStoreWithMiddleware = applyMiddleware(
-    createDebounce()
-)(createStore);
+const store = createStore(Reducer, loadFromLocalStorage());
 
-const store = createStoreWithMiddleware(Reducer, loadFromLocalStorage());
-
-store.subscribe(() => saveToLocalStorage(store.getState()));
+store.subscribe(() => {
+    saveToLocalStorage({
+        savedTournaments: store.getState().savedTournaments
+    })
+});
 
 export default store;

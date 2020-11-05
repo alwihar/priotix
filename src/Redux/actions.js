@@ -8,7 +8,7 @@ export function searchedTournamentsAction (tournaments) {
         payload: tournaments,
         meta: {
             debounce: {
-                time: 300,
+                time: 1000,
             }
         }
     }

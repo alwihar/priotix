@@ -11,9 +11,7 @@ import CloseIcon from '@material-ui/icons/Close';
 const SaveList = () => {
 
     const deleteTournament = useDispatch();
-
     const savedTournaments = useSelector(state => state.savedTournaments);
-    console.log(savedTournaments);
 
     return (
         <div className='SaveList_wrap'>

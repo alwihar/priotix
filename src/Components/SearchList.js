@@ -11,7 +11,6 @@ const SearchList = () => {
 
     const searchedTournaments = useSelector(state => state.searchedTournaments);
     const showResults = useSelector(state => state.showResults);
-    console.log(searchedTournaments);
 
     return (
         <div className='SearchList_wrap'>

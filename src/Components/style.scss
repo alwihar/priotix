@@ -12,8 +12,8 @@
   background: radial-gradient(circle, rgba(255,221,221,1) 0%, rgba(216,210,255,1) 100%);
 
   .Search {
-    width: 37%;
-    height: 45%;
+    width: 40%;
+    height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,6 +21,22 @@
     background-color: white;
     border-radius: 20px;
     box-shadow: 8px 8px 18px -3px rgba(161,132,161,1);
+
+    @media screen
+    and (min-width: 1000px) {
+      width: 40%;
+    }
+
+    @media screen
+    and (min-width: 650px)
+    and (max-width: 1000px) {
+      width: 50%;
+    }
+
+    @media screen
+    and (max-width: 650px) {
+      width: 90%;
+    }
 
     .Search_title {
       width: 100%;
@@ -59,7 +75,7 @@
     }
 
     .SearchList_wrap {
-      max-height: 100%;
+      max-height: 25vh;
       flex: 1;
       overflow-y: auto;
       overflow-x: hidden;
@@ -82,7 +98,7 @@
   }
 
   .SaveList_wrap {
-    height: 30%;
+    height: 30vh;
     width: 100%;
 
     .SaveList_title {
@@ -123,6 +139,7 @@
       }
 
       .Tournament_item {
+        height: max-content;
         max-width: 400px;
         padding: 10px;
         border: none;
@@ -139,7 +156,6 @@
     &:hover {
       background-color: rgb(232, 240, 254);
     }
-
-
   }
 }
+

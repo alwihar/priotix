@@ -4,7 +4,7 @@ const initialState = {
     savedTournaments: [],
 };
 
-function Reducer(state = initialState, action) {
+function reducer(state = initialState, action) {
     switch (action.type) {
         case "SEARCHED_TOURNAMENTS":
             return {
@@ -33,4 +33,4 @@ function Reducer(state = initialState, action) {
     }
 }
 
-export default Reducer;
+export default reducer;

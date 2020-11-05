@@ -6,8 +6,7 @@ import {searchedTournamentsAction} from "../Redux/actions";
 import useDebounce from "../Utility/useDebounce";
 
 import TextField from '@material-ui/core/TextField';
-
-import './style.scss';
+import '../Styles/style.scss';
 
 const MAIN_URL = 'https://api-search.win.gg';
 
@@ -41,7 +40,6 @@ const SearchBar = () => {
             }
         })
             .then(function (response) {
-                console.log(response)
                 handleSuccessTournaments(response?.data[0]?.documents)
             })
             .catch(function (error) {

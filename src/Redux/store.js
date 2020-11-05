@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import Reducer from "./reducers.js";
+import reducer from "./reducers.js";
 
 function saveToLocalStorage(state) {
     try {
@@ -21,7 +21,7 @@ function loadFromLocalStorage() {
     }
 }
 
-const store = createStore(Reducer, loadFromLocalStorage());
+const store = createStore(reducer, loadFromLocalStorage());
 
 store.subscribe(() => {
     saveToLocalStorage({

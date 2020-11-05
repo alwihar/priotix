@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from "./SearchBar";
 import SearchList from "./SearchList";
-import './style.scss';
+import '../Styles/style.scss';
 import SaveList from "./SaveList";
 
 const App = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import './style.scss';
+import '../Styles/style.scss';
 import Tournament from "./Tournament";
 import {addTournamentAction} from "../Redux/actions";
 

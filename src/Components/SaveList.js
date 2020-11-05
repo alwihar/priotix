@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 
 import Tournament from "./Tournament";
-import './style.scss';
+import '../Styles/style.scss';
 import {deleteTournamentAction} from "../Redux/actions";
 
 import IconButton from '@material-ui/core/IconButton';
